@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
+
+@import "tailwindcss";
+
+/* Custom Color and Styles */
+:root {
+  --chai--yellow: #f4c542;
+  --chai--brown: #3e2723;
+}
+
+/* Custom Utility Classes */
+.text-chaiYellow {
+  color: var(--chai--yellow);
+}
+
+.bg-chaiYellow {
+  background-color: var(--chai--yellow);
+}
+
+.text-chaiBrown {
+  color: var(--chai--brown);
+}
+
+.bg-chaiBrown {
+  background-color: var(--chai--brown);
+}
+
+.hover\:text-chaiBrown:hover {
+  color: var(--chai--brown);
+}
+
+.hover\:bg-chaiBrown:hover {
+  background-color: var(--chai--brown);
+}
+
+/* Logo Font */
+.logo-font {
+  font-family: "Pacifico", cursive;
+}
