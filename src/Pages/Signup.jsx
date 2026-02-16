@@ -26,7 +26,7 @@ export const Signup = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col overflow-hidden bg-white md:flex-row">
+    <div className="flex min-h-screen flex-col overflow-hidden bg-white md:flex-row md:bg-[#f0c9b0]">
       {/* Left Section */}
       <div className="relative hidden flex-col items-start bg-[#f0c9b0] px-6 py-6 md:w-[30%] lg:flex">
         <NavLink to="/" className="mb-4">
@@ -43,7 +43,7 @@ export const Signup = () => {
           <span className="logo-font text-chaiBrown">Ek Chup Chai</span>
         </h1>
 
-        {/* Cards Stack */}
+        {/* Cards */}
         <div className="relative flex h-100 w-full items-center justify-center">
           <AnimatePresence>
             <motion.div
@@ -98,7 +98,67 @@ export const Signup = () => {
       </div>
 
       {/* Right Section */}
-      <div></div>
+      <div className="flex w-full flex-col rounded-none bg-white px-4 py-6 lg:ml-1 lg:w-[70%] lg:rounded-l-[80px] lg:py-10 lg:shadow-md">
+        {/* Top Bar */}
+        <div className="mb-4 flex items-center justify-between lg:mb-6">
+          <NavLink to="/">
+            <img className="h-12 w-12 lg:hidden" src={logo} alt="Logo" />
+          </NavLink>
+          <p className="text-[16px] text-neutral-800">
+            Already have an account?{" "}
+            <NavLink to="/login" className="text-black underline">
+              Sign in
+            </NavLink>
+          </p>
+        </div>
+
+        {/* Center Form */}
+        <div className="flex flex-1 items-center justify-center">
+          <div className="mt-20 w-full max-w-xs md:mt-0 md:max-w-sm">
+            <h2 className="mb-2 text-3xl font-bold text-neutral-900 md:text-4xl">
+              Create your account
+            </h2>
+            <p className="text-md mb-2 text-neutral-500">
+              Choose a username for your page.
+            </p>
+
+            {/* Domain Input */}
+            <div className="flex items-center overflow-hidden rounded-lg bg-neutral-100 ring-neutral-800 transition duration-300 placeholder:text-neutral-500 hover:bg-neutral-200 focus:bg-transparent focus:ring-1 focus:ring-neutral-800 focus:ring-offset-1">
+              <span className="px-3 text-sm font-bold whitespace-nowrap text-neutral-600">
+                ekchupchai.com/
+              </span>
+              <input
+                type="text"
+                placeholder="yourname"
+                className="flex flex-1 p-3 text-sm font-semibold text-neutral-800 outline-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-chaiBrown px4 mt-3 w-full cursor-pointer rounded-full py-3 text-white transition duration-300 hover:opacity-90 active:scale-90"
+            >
+              Sign up
+            </button>
+            <p className="mt-3 text-xs text-neutral-500">
+              By continuing, you agree to the{" "}
+              <NavLink
+                to="#"
+                className="text-neutral-800 underline transition duration-300 hover:no-underline"
+              >
+                terms of service
+              </NavLink>{" "}
+              and{" "}
+              <NavLink
+                to="#"
+                className="text-neutral-800 underline transition duration-300 hover:no-underline"
+              >
+                privacy policy
+              </NavLink>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

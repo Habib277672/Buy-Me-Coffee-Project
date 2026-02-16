@@ -28,7 +28,7 @@ export const Login = () => {
           />
         </NavLink>
 
-        <p className="text-xs font-semibold text-neutral-900 md:text-[16px]">
+        <p className="font-semibold text-neutral-900 md:text-[16px]">
           Don't have an account?{" "}
           <NavLink to="/signup" className="font-medium underline">
             Sign up
