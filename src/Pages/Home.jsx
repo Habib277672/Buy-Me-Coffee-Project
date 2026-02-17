@@ -8,13 +8,13 @@ import { Publish } from "../Components/UI/Publish";
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Hero />
-      <HowItWorks />
+      {/* <HowItWorks />
       <Features />
       <Testimonials />
       <CallToAction />
-      <Publish />
-    </div>
+      <Publish /> */}
+    </>
   );
 };

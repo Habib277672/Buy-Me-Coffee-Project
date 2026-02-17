@@ -82,7 +82,7 @@ export const Signup = () => {
               );
             })}
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:pl-6">
             <div className="text-chaiBrown mt-2 flex space-x-1">
               <IoStarSharp />
               <IoStarSharp />
@@ -90,7 +90,7 @@ export const Signup = () => {
               <IoStarSharp />
               <IoStarSharp />
             </div>
-            <p className="mt-1 text-sm font-semibold">
+            <p className="mt-1 text-xs font-semibold">
               Loved by 1,000,000+ creators
             </p>
           </div>

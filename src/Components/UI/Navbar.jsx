@@ -55,7 +55,7 @@ export const NavBar = () => {
 
         {/* Desktop Nav */}
         {/* Left Side Items */}
-        <div className="hidden items-center gap-8 text-base font-semibold text-neutral-900 md:flex">
+        <div className="hidden items-center gap-8 text-base font-bold text-neutral-900 md:flex">
           <NavLink
             to="#"
             className="hover:text-chaiBrown transition duration-300"
@@ -115,7 +115,7 @@ export const NavBar = () => {
 
         {/* Center Item Logo */}
         <div className="absolute left-1/2 hidden -translate-x-1/2 transform md:flex">
-          <div className="flex cursor-pointer items-center gap-0.5 font-semibold">
+          <div className="flex cursor-pointer items-center gap-0.5 font-medium">
             <NavLink to="/" className="flex items-center gap-0.5">
               <img
                 src={logo}
@@ -143,14 +143,14 @@ export const NavBar = () => {
           </div>
           <NavLink
             to="/login"
-            className="hover:text-chaiBrown text-base font-semibold text-neutral-900 transition duration-300"
+            className="hover:text-chaiBrown text-base font-bold text-neutral-900 transition duration-300"
           >
             Log in
           </NavLink>
 
           <NavLink
             to="/signup"
-            className="bg-chaiBrown rounded-full px-4 py-3 text-base font-semibold text-white transition duration-300 hover:scale-[1.03] hover:opacity-95"
+            className="bg-chaiBrown rounded-full px-4 py-2 text-base font-bold text-white transition duration-300 hover:scale-[1.03] hover:opacity-95"
           >
             Sign up
           </NavLink>
