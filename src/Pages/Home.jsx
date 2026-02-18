@@ -9,7 +9,7 @@ import { Publish } from "../Components/UI/Publish";
 export const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero z />
       {/* <HowItWorks />
       <Features />
       <Testimonials />

@@ -1,11 +1,61 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaHeart, FaStar } from "react-icons/fa";
 import logo from "../../assets/Images/logo.png";
 import { NavLink } from "react-router-dom";
+import userOne from "../../assets/Images/userOne.jpg";
+import userTwo from "../../assets/Images/userTwo.jpg";
+import userThree from "../../assets/Images/userThree.jpg";
+import userFour from "../../assets/Images/userFour.jpg";
+import userFive from "../../assets/Images/userFive.jpg";
+import userSix from "../../assets/Images/userSix.jpg";
+import Tilt from "react-parallax-tilt";
+// import { motion } from "motion/react";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#f5f1ee] px-4 pt-25 text-center sm:px-8">
+      {/* Floating Cards (Hidden on Mobile)*/}
+      <div className="absolute inset-0 z-0 hidden max-w-full overflow-hidden lg:block">
+        {/* Left Side Floating Cards */}
+        <div className="absolute top-45 -left-1 z-10 w-50 -rotate-6 cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[0]} />
+          </Tilt>
+        </div>
+
+        <div className="absolute top-82.25 left-24 z-20 w-50 rotate-[-4deg] cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[1]} />
+          </Tilt>
+        </div>
+
+        <div className="absolute bottom-15 -left-1 z-30 w-50 rotate-6 cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[2]} />
+          </Tilt>
+        </div>
+
+        {/* Right Side Floating Cards */}
+
+        <div className="absolute top-45 -right-1 z-10 w-50 rotate-6 cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[3]} />
+          </Tilt>
+        </div>
+
+        <div className="absolute top-82.25 right-24 z-20 w-50 rotate-[4deg] cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[4]} />
+          </Tilt>
+        </div>
+
+        <div className="absolute -right-1 bottom-15 z-30 w-50 -rotate-6 cursor-pointer">
+          <Tilt glareEnable={false}>
+            <Card {...testimonials[5]} />
+          </Tilt>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="relative z-50 mx-auto flex min-h-[calc(100vh-150px)] w-full max-w-3xl flex-col items-center justify-center px-2 sm:px-4">
         {/* Star Line */}
@@ -47,7 +97,63 @@ export const Hero = () => {
             </span>
           </NavLink>
         </div>
+
+        {/* Bottom Tag line */}
+        <p className="mx-auto max-w-md px-6 text-center text-xs leading-relaxed text-neutral-500 sm:px-12 sm:text-sm lg:max-w-lg">
+          Setting up your chai page takes less time than boiling water!
+        </p>
       </div>
     </section>
   );
 };
+
+// Card Component for Hero Section
+const Card = ({ name, supporters, avatar }) => {
+  return (
+    <div className="custom-shadow text-chiaBrown flex flex-col items-center gap-2 rounded-2xl border border-[#BB591C] bg-[#edcfbc]/50 p-4 text-center text-sm backdrop-blur-md">
+      <img
+        src={avatar}
+        alt="Avatar"
+        className="h-10 w-10 rounded-full object-cover"
+      />
+      <span className="text-center text-sm font-semibold">{name}</span>
+      <div className="text-chaiBrown -mt-4px flex items-center gap-1 text-xs">
+        <FaHeart className="text-chaiBrown opacity-80" />
+        <span>{supporters} supporters</span>
+      </div>
+    </div>
+  );
+};
+
+const testimonials = [
+  {
+    name: "Seerat is funding her art with Ek Cup Chai",
+    supporters: "2,200",
+    avatar: userOne,
+  },
+  {
+    name: "Aman shares coding tips & gets chai love!",
+    supporters: "4,800",
+    avatar: userFour,
+  },
+  {
+    name: "Amina writes poetry, powered by chai ☕",
+    supporters: "700",
+    avatar: userTwo,
+  },
+  {
+    name: "Habib is podcasting over sips of chai",
+    supporters: "1,120",
+    avatar: userThree,
+  },
+  {
+    name: "Simran creates tutorials & chai fuels her",
+    supporters: "3,450",
+    avatar: userFive,
+  },
+  {
+    name: "Manu makes music & gets support via chai",
+    supporters: "2,670",
+    avatar: userSix,
+  },
+];
