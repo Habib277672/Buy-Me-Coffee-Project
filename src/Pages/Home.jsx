@@ -9,9 +9,9 @@ import { Publish } from "../Components/UI/Publish";
 export const Home = () => {
   return (
     <>
-      <Hero z />
-      {/* <HowItWorks />
-      <Features />
+      <Hero />
+      <HowItWorks />
+      {/* <Features />
       <Testimonials />
       <CallToAction />
       <Publish /> */}
