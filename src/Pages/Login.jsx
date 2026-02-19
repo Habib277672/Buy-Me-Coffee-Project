@@ -5,6 +5,7 @@ import logo from "../assets/Images/logo.png";
 export const Login = () => {
   const [current, setCurrent] = useState({
     email: "",
+    password: "",
   });
 
   const handleFormSubmit = (e) => {
@@ -12,6 +13,7 @@ export const Login = () => {
     console.log(current);
     setCurrent({
       email: "",
+      password: "",
     });
   };
 
@@ -57,11 +59,24 @@ export const Login = () => {
               placeholder="Email"
               className="w-full rounded-lg border-none bg-neutral-100 p-3 px-4 text-sm font-semibold transition duration-300 outline-none placeholder:text-left placeholder:font-semibold placeholder:text-neutral-500 hover:bg-neutral-200 focus:bg-transparent focus:ring-1 focus:ring-neutral-800 focus:ring-offset-1"
             />
+            <input
+              type="password"
+              name="password"
+              value={current.password}
+              onChange={(e) =>
+                setCurrent({
+                  ...current,
+                  [e.target.name]: e.target.value,
+                })
+              }
+              placeholder="Password"
+              className="w-full rounded-lg border-none bg-neutral-100 p-3 px-4 text-sm font-semibold transition duration-300 outline-none placeholder:text-left placeholder:font-semibold placeholder:text-neutral-500 hover:bg-neutral-200 focus:bg-transparent focus:ring-1 focus:ring-neutral-800 focus:ring-offset-1"
+            />
             <button
               type="submit"
               className="bg-chaiBrown w-full cursor-pointer rounded-full py-3 text-sm font-semibold text-white transition duration-300 hover:opacity-90 active:scale-95"
             >
-              Continue with email
+              Continue
             </button>
           </form>
         </div>

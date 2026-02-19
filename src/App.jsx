@@ -4,6 +4,9 @@ import { AppLayout } from "./Components/Layout/AppLayout";
 import { Home } from "./Pages/Home";
 import { Login } from "./Pages/Login";
 import { Signup } from "./Pages/SignUp";
+import { IOS } from "./Pages/IOS";
+import { Android } from "./Pages/Android";
+import { HelpCenter } from "./Pages/HelpCenter";
 import "./App.css";
 
 const App = () => {
@@ -16,6 +19,14 @@ const App = () => {
           path: "/",
           element: <Home />,
         },
+        {
+          path: "/ios",
+          element: <IOS />,
+        },
+        {
+          path: "/android",
+          element: <Android />,
+        },
       ],
     },
     {
@@ -25,6 +36,10 @@ const App = () => {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/helpcenter",
+      element: <HelpCenter />,
     },
   ]);
   return (

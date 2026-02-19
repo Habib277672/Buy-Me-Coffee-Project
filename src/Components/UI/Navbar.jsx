@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
@@ -9,9 +9,41 @@ import { AnimatePresence, motion } from "motion/react";
 import { IoSearch } from "react-icons/io5";
 import logo from "../../assets/Images/logo.png";
 
+// If User Click Outside The Card Then Card will be closed
+const useOutsideClick = (callback) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, [callback]);
+
+  return ref;
+};
+
 export const NavBar = () => {
   const [isDropDownOpen, SetIsDropDownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const dropdownRef = useOutsideClick(() => {
+    SetIsDropDownOpen(false);
+  });
+
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleDropdownLinkClick = () => {
+    SetIsDropDownOpen(false);
+  };
 
   return (
     <>
@@ -69,7 +101,7 @@ export const NavBar = () => {
             Wall of <FaRegHeart className="text-chaiBrown text-base" />
           </NavLink>
 
-          <div className="relative z-101">
+          <div ref={dropdownRef} className="relative z-101">
             <div
               onClick={() => SetIsDropDownOpen(!isDropDownOpen)}
               className="hover:text-chaiBrown flex cursor-pointer items-center gap-2 transition duration-300"
@@ -87,7 +119,8 @@ export const NavBar = () => {
                   className="absolute top-10 left-0 z-105 w-54 space-y-4 rounded-xl border border-neutral-100 bg-white p-4 shadow-xl"
                 >
                   <NavLink
-                    to="#"
+                    to="/helpcenter"
+                    onClick={handleDropdownLinkClick}
                     className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
                   >
                     <FiHelpCircle className="text-lg" />{" "}
@@ -95,14 +128,16 @@ export const NavBar = () => {
                   </NavLink>
 
                   <NavLink
-                    to="#"
+                    to="/ios"
+                    onClick={handleDropdownLinkClick}
                     className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
                   >
                     <FaApple className="text-lg" /> <span>IOS</span>
                   </NavLink>
 
                   <NavLink
-                    to="#"
+                    to="/android"
+                    onClick={handleDropdownLinkClick}
                     className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
                   >
                     <FaAndroid className="text-lg" /> <span>Android</span>
@@ -169,6 +204,7 @@ export const NavBar = () => {
           >
             <NavLink
               to="#"
+              onClick={handleMobileLinkClick}
               className="hover:text-chaiBrown transition duration-300"
             >
               FAQ
@@ -176,6 +212,7 @@ export const NavBar = () => {
 
             <NavLink
               to="#"
+              onClick={handleMobileLinkClick}
               className="hover:text-chaiBrown flex items-center gap-2 tracking-tight transition duration-300"
             >
               Wall of <FaRegHeart className="text-chaiBrown text-base" />
@@ -184,21 +221,24 @@ export const NavBar = () => {
             <span className="text-neutral-700">Resources</span>
 
             <NavLink
-              to="#"
+              to="/helpcenter"
+              onClick={handleMobileLinkClick}
               className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
             >
               <FiHelpCircle className="text-lg" /> <span>Help Center</span>
             </NavLink>
 
             <NavLink
-              to="#"
+              to="/ios"
+              onClick={handleMobileLinkClick}
               className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
             >
               <FaApple className="text-lg" /> <span>IOS</span>
             </NavLink>
 
             <NavLink
-              to="#"
+              to="/android"
+              onClick={handleMobileLinkClick}
               className="text-md hover:text-chaiBrown transtion flex items-center gap-2 duration-300"
             >
               <FaAndroid className="text-lg" /> <span>Android</span>
