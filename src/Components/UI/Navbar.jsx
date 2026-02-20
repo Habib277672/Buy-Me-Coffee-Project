@@ -107,7 +107,12 @@ export const NavBar = () => {
               className="hover:text-chaiBrown flex cursor-pointer items-center gap-2 transition duration-300"
             >
               <span>Resources</span>
-              <FiChevronDown className="text-base" />
+
+              <FiChevronDown
+                className={`text-base transition-transform duration-300 ease-in-out ${
+                  isDropDownOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </div>
             <AnimatePresence>
               {/* DropDown */}

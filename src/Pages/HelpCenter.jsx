@@ -20,7 +20,6 @@ import { LuArrowRightLeft } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoEarthOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 
 // If User Click Outside The Card Then Card will be closed

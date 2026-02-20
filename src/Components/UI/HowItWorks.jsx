@@ -61,6 +61,7 @@ export const HowItWorks = () => {
                   <img
                     src={logo}
                     alt="Logo Image"
+                    draggable="false"
                     className="pointer-events-none absolute right-3 -bottom-px z-0 h-7 w-7 opacity-25 transition duration-200 group-hover:opacity-50"
                   />
                   {/* Data */}
