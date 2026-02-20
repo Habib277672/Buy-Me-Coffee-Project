@@ -114,6 +114,7 @@ const Card = ({ name, supporters, avatar }) => {
       <img
         src={avatar}
         alt="Avatar"
+        draggable="false"
         className="h-10 w-10 rounded-full object-cover"
       />
       <span className="text-center text-sm font-semibold">{name}</span>

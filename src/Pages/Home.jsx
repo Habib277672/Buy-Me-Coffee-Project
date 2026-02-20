@@ -13,8 +13,8 @@ export const Home = () => {
       <HowItWorks />
       <Features />
       <Publish />
-      {/* <Testimonials />
-      <CallToAction /> */}
+      <Testimonials />
+      {/* <CallToAction /> */}
     </>
   );
 };
