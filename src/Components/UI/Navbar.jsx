@@ -89,13 +89,13 @@ export const NavBar = () => {
         {/* Left Side Items */}
         <div className="hidden items-center gap-8 text-base font-bold text-neutral-900 md:flex">
           <NavLink
-            to="#"
+            to="/faq"
             className="hover:text-chaiBrown transition duration-300"
           >
             FAQ
           </NavLink>
           <NavLink
-            to="#"
+            to="/walloflove"
             className="hover:text-chaiBrown flex items-center gap-2 tracking-tight transition duration-300"
           >
             Wall of <FaRegHeart className="text-chaiBrown text-base" />

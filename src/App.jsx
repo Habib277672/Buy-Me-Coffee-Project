@@ -7,6 +7,8 @@ import { Signup } from "./Pages/SignUp";
 import { IOS } from "./Pages/IOS";
 import { Android } from "./Pages/Android";
 import { HelpCenter } from "./Pages/HelpCenter";
+import { WallofLove } from "./Pages/WallofLove";
+import { FAQ } from "./Pages/FAQ";
 import "./App.css";
 
 const App = () => {
@@ -18,6 +20,14 @@ const App = () => {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/faq",
+          element: <FAQ />,
+        },
+        {
+          path: "/walloflove",
+          element: <WallofLove />,
         },
         {
           path: "/ios",
