@@ -14,7 +14,7 @@ export const Home = () => {
       <Features />
       <Publish />
       <Testimonials />
-      {/* <CallToAction /> */}
+      <CallToAction />
     </>
   );
 };
